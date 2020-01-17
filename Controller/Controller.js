@@ -17,8 +17,8 @@ res.json(task);
 exports.signup = function (req, res) {
 const reg_email = /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/;
 const reg_mob = /^[0-9]{10}$/;
-const reg_pwd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,8}$/;
-if (reg_pwd.test(req.body.password)) {
+const reg_pwd = /^[@#][A-Za-z0-9]{9,11}$/;
+if (!reg_pwd.test(req.body.password)) {
 console.log(req.body.password)
 res.send('password is invalid');
 }
