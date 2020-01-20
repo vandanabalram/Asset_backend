@@ -13,7 +13,7 @@ var cors = require('cors')
 var bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/Register', { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
-// mongoose.connect('mongodb://localhost', { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }); 
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
