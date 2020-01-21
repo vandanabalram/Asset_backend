@@ -38,7 +38,8 @@ exports.read_a_task = function (req, res) {
 };
 
 exports.update_a_tasks = function (req, res) {
-  UserData.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true }, function (err, task1) {
+  console.log(req.body)
+  UserData.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, function (err, task1) {
     if (!err)
       res.json(task1);
   });
