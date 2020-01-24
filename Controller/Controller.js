@@ -124,5 +124,12 @@ exports.GetUserById = function (req, res) {
     });
 };
 
-
+exports.changepassword = (req, res)=> {
+  console.log(req.body)
+  UserData.findOneAndUpdate({email: req.body.email}, req.body, {new: true}, function(err, task) {
+  if (err)
+  res.send(err);
+  res.json(task);
+  });
+  };
 
