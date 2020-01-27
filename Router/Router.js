@@ -5,6 +5,8 @@ module.exports = function (app) {
   const misdesk = require('../Controller/MiscellaneousDesktopController');
   const mislap = require('../Controller/MisLapController');
   const isAuth = require('../Middleware/isAuth')
+  const userController = require('../Controller/Controller');
+
 
 
   app.route('/Signup')
@@ -62,6 +64,10 @@ module.exports = function (app) {
   app.route('/MiscellaneousLaptop/:id')
     .put(mislap.update_a_tasks)
     .get(mislap.get_a_datas)
+
+    app.route('/reset')
+.   put(userController.changepassword)
+
 }
 
 

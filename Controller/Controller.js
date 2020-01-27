@@ -87,7 +87,7 @@ exports.userSignin = (req, res, next) => {
 
       }
       loadedUser = user;
-      return bcrypt.compare(password, user.password);
+      return (password===user.password?true:false)
     })
     .then(isEqual => {
       if (!isEqual) {
@@ -132,4 +132,6 @@ exports.changepassword = (req, res)=> {
   res.json(task);
   });
   };
+
+
 
