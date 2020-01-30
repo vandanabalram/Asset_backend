@@ -13,7 +13,6 @@ exports.get_a_data = function (req, res) {
 };
 
 exports.update_a_task = function (req, res) {
-  console.log(req.body)
   var User = new UserData(req.body);
   User.save({}, function (err, data) {
     if (err)
@@ -39,7 +38,6 @@ exports.read_a_task = function (req, res) {
 };
 
 exports.update_a_tasks = function (req, res) {
-  console.log(req.body)
   UserData.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, function (err, task1) {
     if (!err)
       res.json(task1);

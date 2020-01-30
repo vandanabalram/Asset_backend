@@ -9,12 +9,10 @@ exports.get_a_data = function (req, res) {
     if (err)
       res.send(err);
     res.json(task3);
-    console.log(task3)
   });
 };
 
 exports.update_a_task = function (req, res) {
-  console.log(req.body)
   var User = new UserData(req.body);
   User.save({}, function (err, data) {
     if (err)

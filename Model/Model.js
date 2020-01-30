@@ -24,7 +24,7 @@ var TaskSchema = new Schema({
   },
   IsAdmin: {
     type: Boolean,
-    default: false
+    default: true
   },
 });
 

@@ -37,20 +37,16 @@ exports.delete_a_task = function (req, res) {
 
 exports.GetUserById = function (req, res) {
   const User_ID = req.params.UserId;
-  console.log('userid', User_ID);
   UserData.findById({ _id: User_ID })
     .then(user => {
       res.json(user);
-      console.log(user);
     });
 };
 
 exports.signup = function (req, res) {
-  console.log(req.body, "connect")
   const reg_email = /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/;
   const reg_pwd = /^[a-zA-Z0-9@*#]{8,15}$/;
   if (!reg_pwd.test(req.body.password)) {
-    console.log(req.body.password)
     res.send('password is invalid');
   }
   if (reg_email.test(req.body.email)) {
@@ -76,7 +72,6 @@ exports.signup = function (req, res) {
 };
 
 exports.changepassword = (req, res) => {
-  console.log(req.body, "hai")
   const pword = cryptr.encrypt(req.body.password);
   req.body.password = pword;
   UserData.findOneAndUpdate({ email: req.body.email }, req.body, { new: true }, function (err, task) {
@@ -85,7 +80,6 @@ exports.changepassword = (req, res) => {
     res.json(task);
   });
 };
-
 
 exports.userSignin = (req, res, next) => {
   const email = req.body.email;
