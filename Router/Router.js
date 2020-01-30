@@ -7,8 +7,6 @@ module.exports = function (app) {
   const isAuth = require('../Middleware/isAuth')
   const userController = require('../Controller/Controller');
 
-
-
   app.route('/Signup')
     .get(todoList.get_a_data)
     .post(todoList.signup);
@@ -24,8 +22,6 @@ module.exports = function (app) {
   app.route('/User/:UserId')
     .get(todoList.GetUserById);
 
-
-
   app.route('/Desktop')
     .get(desktop.get_a_data)
     .post(desktop.update_a_task)
@@ -34,7 +30,6 @@ module.exports = function (app) {
   app.route('/Desktop/:id')
     .put(desktop.update_a_tasks)
     .get(desktop.get_a_datas)
-
 
   app.route('/Laptop')
     .get(laptop.get_a_data)
@@ -54,8 +49,6 @@ module.exports = function (app) {
     .put(misdesk.update_a_tasks)
     .get(misdesk.get_a_datas)
 
-
-
   app.route('/MiscellaneousLaptop')
     .get(mislap.get_a_data)
     .post(mislap.update_a_task)
@@ -65,8 +58,8 @@ module.exports = function (app) {
     .put(mislap.update_a_tasks)
     .get(mislap.get_a_datas)
 
-    app.route('/reset')
-.   put(userController.changepassword)
+  app.route('/reset')
+    .put(userController.changepassword)
 
 }
 

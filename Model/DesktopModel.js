@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var TaskSchema = new Schema({
   Employee_Id: {
     type: String,
@@ -12,14 +11,12 @@ var TaskSchema = new Schema({
   Name: {
     type: String,
   },
-
   MAC_Address: {
     type: String,
   },
   Comment: {
     type: String,
   },
-
 });
 
 module.exports = mongoose.model('Tasks1', TaskSchema);

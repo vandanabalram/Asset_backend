@@ -16,7 +16,6 @@ exports.update_a_task = function (req, res) {
   console.log(req.body)
   var User = new UserData(req.body);
   User.save({}, function (err, data) {
-    console.log("added")
     if (err)
       res.send(err);
     res.json(data);

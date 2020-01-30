@@ -1,39 +1,31 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var TaskSchema = new Schema({
-Firstname: {
+  Firstname: {
     type: String,
     required: true
-},
-Lastname:{
-    type: String,
-    required:true
-},
-email:{
+  },
+  Lastname: {
     type: String,
     required: true
-},
-
-password:{
+  },
+  email: {
     type: String,
     required: true
-},
-Confirmpassword:{
+  },
+  password: {
     type: String,
     required: true
-},
-
-Mobnum:{
+  },
+  Mobnum: {
     type: Number,
     required: true
-},
-IsAdmin:{
+  },
+  IsAdmin: {
     type: Boolean,
     default: false
-    },
-
+  },
 });
 
 module.exports = mongoose.model('Tasks', TaskSchema);
